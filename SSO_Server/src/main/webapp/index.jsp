@@ -46,10 +46,26 @@
         var dat={};
         dat.username=$("#username").val();
         dat.password=$("#password").val();
+        if($("#service").val()!="null")
         dat.service=$("#service").val();
-        $.post("/SSO_Server/user/login",dat, function (data, textStatus) {
+/*        $.post("/SSO_Server/user/login",dat, function (data, textStatus) {
           alert(data);
-        })
+        })*/
+        $.ajax({
+            async : false,
+            url : 'http://localhost:8081/SSO_Server/user/login',
+            type : "GET",
+            dataType : 'jsonp',
+            jsonp : 'Jcallback',
+            data : dat,
+            timeout : 5000,
+            success : function(json) {
+                    alert(json.resString);
+                    if(json.resCode==0&&json.newUrl!=""){
+                        window.location.href=json.newUrl;
+                    }
+            }
+        });
     }
 </script>
 </html>

@@ -19,12 +19,7 @@ public class SSOServerFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         String urlString=request.getRequestURI();
-        System.out.println(urlString);
-        if(urlString.indexOf("index.jsp")>0||urlString.indexOf("http")>0){
-            filterChain.doFilter(servletRequest, servletResponse);
-            return;
-        }
-        else{
+        //System.out.println(urlString);
             String service = request.getParameter("service");
             String ticket = request.getParameter("ticket");
             Cookie[] cookies = request.getCookies();
@@ -37,12 +32,12 @@ public class SSOServerFilter implements Filter {
                     }
                 }
             }
-
+            //获取ticket对应名字时跳过过滤器
             if (null == service && null != ticket) {
                 filterChain.doFilter(servletRequest, servletResponse);
                 return;
             }
-
+            System.out.println(username);
             if (null != username && !"".equals(username)) {
                 long time = System.currentTimeMillis();
                 String timeString = username + time;
@@ -76,7 +71,6 @@ public class SSOServerFilter implements Filter {
             }
         }
 
-    }
 
     @Override
     public void init(FilterConfig arg0) throws ServletException {
