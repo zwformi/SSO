@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SSO.iml" filepath="$PROJECT_DIR$/SSO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSO_Client_Oa/SSO_Client_Oa.iml" filepath="$PROJECT_DIR$/SSO_Client_Oa/SSO_Client_Oa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSO_Client_Pro/SSO_Client_Pro.iml" filepath="$PROJECT_DIR$/SSO_Client_Pro/SSO_Client_Pro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SSO_Server/SSO_Server.iml" filepath="$PROJECT_DIR$/SSO_Server/SSO_Server.iml" />
+    </modules>
+  </component>
+</project>

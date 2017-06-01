@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SSO_Client_Pro:war">
+    <output-path>$PROJECT_DIR$/SSO_Client_Pro/target</output-path>
+    <root id="archive" name="sso-pro.war">
+      <element id="artifact" artifact-name="SSO_Client_Pro:war exploded" />
+    </root>
+  </artifact>
+</component>
